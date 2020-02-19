@@ -1,21 +1,32 @@
+<header class="d-flex">
 
+  <h5 class="p-2">
+    <%= link_to 'Edit Restaurant', new_restaurant_path %>
+  </h5>
+  <h5 class="p-2">
+    <%= link_to 'Customer Reviews', restaurant_reviews_path(@restaurant) %>
+  </h5>
+
+</header>
+
+
+
+<div class="container">
   <h2> <%= @restaurant.name %> </h2>
-  <p>Category: <%= @restaurant.category %></p>
-  <p>Address: <%= @restaurant.address %></p>
+  <p>Category: <%= @restaurant.category.capitalize %></p>
+  <p>Address: <%= @restaurant.address.capitalize %></p>
   <p>Contact: <%= @restaurant.phone_number %></p>
+</div>
 
-<h5>
-  <%= link_to 'Edit Restaurant', new_restaurant_path %>
-</h5>
 
-<h5>
+
+<div class="d-flex">
+  <h5 class="p-2">
   <%= link_to 'Go Back', restaurants_path %>
-</h5>
-
-<h5>
+  </h5>
+  <h5 class="p-2">
   <%= link_to 'Add Review', new_restaurant_review_path(@restaurant) %>
-</h5>
+  </h5>
+</div>
 
-<h5>
-  <%= link_to 'Customer Reviews', restaurant_reviews_path(@restaurant) %>
-</h5>
+
