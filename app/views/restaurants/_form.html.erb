@@ -2,7 +2,7 @@
 
 
 
-
+<div class="m-4 pr-4 pl-4">
   <%= simple_form_for @restaurant do |f| %>
 
     <%= f.input :name %>
@@ -10,7 +10,8 @@
 
     <%= f.input :category, collection: Restaurant::CATEGORIES  %>
     <%= f.input :phone_number %>
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn-primary" %>
 
   <% end %>
 
+</div>
