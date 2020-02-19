@@ -9,12 +9,19 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new
   end
 
-  def show
+  def create
+    @restaurant = Restaurant.new(create_params)
+    if @restaurant.save
+      redirect_to @restaurant
+    else
+      render :new
+    end
+  end
 
+  def show
   end
 
   def edit
-
   end
 
   def update
@@ -22,7 +29,8 @@ class RestaurantsController < ApplicationController
   end
 
   def destroy
-
+    @restaurant.destroy
+    redirect_to restaurants_path
   end
 
   private
